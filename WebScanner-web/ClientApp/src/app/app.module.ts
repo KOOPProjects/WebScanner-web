@@ -4,13 +4,27 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
-import { AppComponent } from './app.component';
+import { HomeComponent } from './components/home/home.component';
+import { AddorderComponent } from './components/addorder/addorder.component';
+import { DeleteorderComponent } from './components/deleteorder/deleteorder.component';
+import { OrderdetailsComponent } from './components/orderdetails/orderdetails.component';
+import { LandingpageComponent } from './components/landingpage/landingpage.component';
+import { SigninComponent } from './components/signin/signin.component';
+import { SignoutComponent } from './components/signout/signout.component';
+import { SignupComponent } from './components/signup/signup.component';
 //here you need to import components 
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    HomeComponent,
+    AddorderComponent,
+    DeleteorderComponent,
+    OrderdetailsComponent,
+    LandingpageComponent,
+    SigninComponent,
+    SignoutComponent,
+    SignupComponent
     //add imported components
   ],
   imports: [
@@ -23,6 +37,6 @@ import { AppComponent } from './app.component';
     ])
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [LandingpageComponent]
 })
 export class AppModule { }

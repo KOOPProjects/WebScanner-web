@@ -25,7 +25,34 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\models\DateAndContentDTO.ts" />
+    <None Remove="ClientApp\src\app\models\HtmlOrder.ts" />
+    <None Remove="ClientApp\src\app\models\Response.ts" />
+    <None Remove="ClientApp\src\app\models\ServerOrder.ts" />
+    <None Remove="ClientApp\src\app\services\htmlorders-backendservice-interface.ts" />
+    <None Remove="ClientApp\src\app\services\htmlorders-backendservice.ts" />
+    <None Remove="ClientApp\src\app\services\responses-backendservice-interface.ts" />
+    <None Remove="ClientApp\src\app\services\responses-backendservice.ts" />
+    <None Remove="ClientApp\src\app\services\serverorders-backendservice-interface.ts" />
+    <None Remove="ClientApp\src\app\services\serverorders-backendservice.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ClientApp\src\app\components\" />
     <Folder Include="Controllers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\models\DateAndContentDTO.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\models\HtmlOrder.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\models\Response.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\models\ServerOrder.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\services\htmlorders-backendservice-interface.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\services\htmlorders-backendservice.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\services\responses-backendservice-interface.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\services\responses-backendservice.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\services\serverorders-backendservice-interface.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\services\serverorders-backendservice.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
