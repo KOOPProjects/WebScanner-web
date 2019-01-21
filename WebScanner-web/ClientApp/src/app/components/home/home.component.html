@@ -1,3 +1,74 @@
-<p>
-  home works!
-</p>
+  <div style="padding-bottom: 10%; padding-top: 10%;">
+      <div class="row">
+        <div class="col-6">
+          <div class="title-div">
+            Server Orders [In database: {{serverOrders.length}} orders]
+          </div>
+          <div class="details-div">
+            <!--  -->
+
+            <div *ngFor="let order of serverOrders let i=index" [attr.data.-index]="i">
+              <div class="row">
+                <div class="col-1"></div>
+                <div class="col-6">
+                  Server Order <label>{{order.id}}</label><br>
+                  Address: <br><label>{{order.targetAddress}}</label>
+                </div>
+                <div class="col-4">
+                  <div class="button details-button" (click)="goToServerOrderDetails(order.id)">
+                    Details
+                  </div>
+                </div>
+                <div class="col-1"></div>
+              </div>
+            </div>
+              <div *ngIf="serverOrders.length == 0" style="margin-left: auto; margin-right: auto; display: block">
+                <div style="text-align: center">{{tempInfo}}</div>
+              </div>
+            
+
+            <!--  -->
+
+            <div class="row">
+              <div class="col-12">
+                <div class="button" (click)="goToAddingServerOrder()">
+                  Add server order
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="title-div">
+            Html Orders [In database: {{htmlOrders.length}} orders]
+          </div>
+          <div class="details-div">
+            <div *ngFor="let order of htmlOrders let i=index" [attr.data.-index]="i">
+              <div class="row">
+                <div class="col-1"></div>
+                <div class="col-6">
+                  Html Order <label>{{order.id}}</label><br>
+                  Adress: <br><label>{{order.targetAddress}}</label>
+                </div>
+                <div class="col-4">
+                  <div class="button details-button" (click)="goToHtmlOrderDetails(order.id)">
+                    Details
+                  </div>
+                </div>
+                <div class="col-1"></div>
+              </div>
+            </div>
+            <div *ngIf="htmlOrders.length == 0" style="margin-left: auto; margin-right: auto; display: block">
+              <div style="text-align: center">{{tempInfo}}</div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <div class="button" (click)="goToAddingHtmlOrder()">
+                  Add html order
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

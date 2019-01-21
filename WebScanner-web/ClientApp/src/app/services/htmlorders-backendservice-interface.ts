@@ -6,4 +6,6 @@ import { HtmlOrder } from "../models/HtmlOrder";
 export abstract class HtmlOrdersBackendServiceInterface {
   abstract addHtmlOrder(newHtmlOrder: HtmlOrder): Observable<number>;
   abstract deleteHtmlOrder(htmlOrderId: number): Observable<number>;
+  abstract getHtmlOrder(htmlOrderId: number): Observable<HtmlOrder>
+  abstract getAllHtmlOrders(): Observable<HtmlOrder[]>
 }

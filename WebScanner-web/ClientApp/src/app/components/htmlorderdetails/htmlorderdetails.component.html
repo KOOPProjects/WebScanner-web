@@ -1,0 +1,124 @@
+<div class="row" style="padding-top: 10%;">
+  <div class="col-1"></div>
+  <div class="col-3">
+    <div class="button" (click)="goBack()">
+      Back to orders list
+    </div>
+  </div>
+  <div class="col-4"></div>
+  <div class="col-3">
+    <div class="button" (click)="goToDelete()">
+      Delete order
+    </div>
+  </div>
+  <div class="col-1"></div>
+</div>
+<div class="row">
+  <div class="col-12 title-div">
+    Order {{htmlOrder.id}}
+  </div>
+</div>
+<div class="row">
+  <div class="col-6 details-div left">
+    <p>Frequency:</p>
+  </div>
+  <div class="col-6 details-div right">
+    <p>{{htmlOrder.frequency}}</p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-6 details-div left">
+    <p>Target:</p>
+  </div>
+  <div class="col-6 details-div right">
+    <p>{{htmlOrder.targetAddress}}</p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-6 details-div left">
+    <p>Question:</p>
+  </div>
+  <div class="col-6 details-div right">
+    <p>{{htmlOrder.subjectOfQuestion}}</p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12 title-div">
+    Statistics[based on {{data.length}} responses]
+  </div>
+</div>
+<div class="row">
+  <div class="col-6 details-div left">
+    <p>Date of first change:</p>
+  </div>
+  <div class="col-6 details-div right">
+    <p>{{firstChangeDate}}</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-1"></div>
+  <div class="col-10" *ngIf="chart" id="chartcontainer">
+    <canvas id="canvas">{{ chart }}</canvas>
+  </div>
+  <div class="col-1"></div>
+</div>
+<div class="row">
+  <div class="col-1"></div>
+  <div class="col-2">
+    <div class="button" (click)='showAllDates()'>
+      Show all dates
+    </div>
+  </div>
+  <div class="col-2">
+    <div class="button " (click) ='getLasts(1000)'>
+      Last 1000 responses
+    </div>
+  </div>
+  <div class="col-2">
+    <div class="button " (click) ='getLasts(500)'>
+      Last 500 responses
+    </div>
+  </div>
+  <div class="col-2">
+    <div class="button " (click) ='getLasts(100)'>
+      Last 100 responses
+    </div>
+  </div>
+  <div class="col-2">
+    <div class="button " (click) ='getLasts(10)'>
+      Last 10 responses
+    </div>
+  </div>
+  <div class="col-1"></div>
+</div>
+<div class="row">
+  <div class="col-1"></div>
+  <div class="col-2 details-div">
+    <label>
+      First date :
+    </label>
+  </div>
+  <div class="col-3 details-div">
+    <input type="text" #firstDate>
+  </div>
+  <div class="col-2 details-div">
+    <label>
+      Last date :
+    </label>
+  </div>
+  <div class="col-3 details-div">
+    <input type="text" #secondDate>
+  </div>
+  <div class="col-1"></div>
+</div>
+<div class="row" style="padding-bottom: 10%;">
+  <div class="col-1"></div>
+  <div class="col-10">
+    <div class="button" (click)='addNewDates(firstDate.value,secondDate.value)'>
+      Show entered time period
+    </div>
+  </div>
+  <div class="col-1"></div>
+</div>
+

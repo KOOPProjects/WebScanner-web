@@ -25,9 +25,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\models\ApiResponse.ts" />
     <None Remove="ClientApp\src\app\models\DateAndContentDTO.ts" />
+    <None Remove="ClientApp\src\app\models\FullResponse.ts" />
+    <None Remove="ClientApp\src\app\models\HtmlContent.ts" />
     <None Remove="ClientApp\src\app\models\HtmlOrder.ts" />
     <None Remove="ClientApp\src\app\models\Response.ts" />
+    <None Remove="ClientApp\src\app\models\ServerContent.ts" />
     <None Remove="ClientApp\src\app\models\ServerOrder.ts" />
     <None Remove="ClientApp\src\app\services\htmlorders-backendservice-interface.ts" />
     <None Remove="ClientApp\src\app\services\htmlorders-backendservice.ts" />
@@ -43,9 +47,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\models\ApiResponse.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\models\DateAndContentDTO.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\models\FullResponse.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\models\HtmlContent.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\models\HtmlOrder.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\models\Response.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\models\ServerContent.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\models\ServerOrder.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\services\htmlorders-backendservice-interface.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\services\htmlorders-backendservice.ts" />

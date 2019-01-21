@@ -1,0 +1,131 @@
+body {
+  background-color: white;
+  color: darkblue;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
+
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {
+    width: 8.33%;
+  }
+
+  .col-2 {
+    width: 16.66%;
+  }
+
+  .col-3 {
+    width: 25%;
+  }
+
+  .col-4 {
+    width: 33.33%;
+  }
+
+  .col-5 {
+    width: 41.66%;
+  }
+
+  .col-6 {
+    width: 50%;
+  }
+
+  .col-7 {
+    width: 58.33%;
+  }
+
+  .col-8 {
+    width: 66.66%;
+  }
+
+  .col-9 {
+    width: 75%;
+  }
+
+  .col-10 {
+    width: 83.33%;
+  }
+
+  .col-11 {
+    width: 91.66%;
+  }
+
+  .col-12 {
+    width: 100%;
+  }
+}
+
+.button {
+  background-color: white;
+  width: 80%;
+  height: 5%;
+  font-size: 20px;
+  color: #12204F;
+  padding: 10px;
+  margin: auto;
+  border: 2px solid #3C729D;
+  border-radius: 4px;
+  margin-top: 1%;
+}
+
+.details-button {
+  margin-top: 20px;
+  padding: 5px;
+}
+
+
+.button:hover {
+  background-color: #3C729D;
+  color: white;
+  cursor: pointer;
+}
+
+div {
+  text-align: center;
+}
+
+  div.title-div {
+    width: 83.33%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    background-color: #000080;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-right: 8.33%;
+    margin-left: 8.33%;
+    font-size: 30px;
+    color: white;
+    border-radius: 4px;
+  }
+
+  div.details-div {
+    word-wrap: break-word;
+    font-size: 20px;
+    margin-bottom: 1%;
+    color: #12204F;
+  }
+
+label {
+  font-size: 20px;
+  margin: auto;
+  color: blue;
+}

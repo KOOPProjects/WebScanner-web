@@ -1,0 +1,20 @@
+<form #propertyForm="ngForm" (ngSubmit)="onSubmit(order)" style=" padding-top: 59%;">
+  
+  <div class="page">
+    <div class="form-group">
+      <label for="targetAddress">Address of target: </label>
+      <input id="targetAddress" name="targetAddress" type="text" [(ngModel)]="order.targetAddress" class="form-control" placeholder="Address of target" />
+    </div>
+    <div class="form-group">
+      <label>Frequency in seconds:</label>
+      <input id="frequency" name="frequency" type="number" [(ngModel)]="order.frequency" class="form-control" placeholder="Frequency in seconds" />
+    </div>
+    <div class="form-group">
+      <label>What do you want to ask for?</label>
+      <input id="question" name="question" type="text" [(ngModel)]="order.question" class="form-control" placeholder="What do you want to ask for" />
+    </div>
+    <div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </div>
+</form>

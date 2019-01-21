@@ -1,0 +1,24 @@
+.header {
+  position: fixed;
+  background-color: #000080;
+  width: 100%;
+  height: 15%;
+  z-index: 1;
+}
+
+.title {
+  position: relative;
+  text-align: center;
+  color: white;
+  font-size: 2.5vw;
+  z-index: 2;
+  top: 25%;
+}
+
+.page {
+  position: fixed;
+  top: 17%;
+  left: 1%;
+  width: 98%;
+  z-index: 1;
+}

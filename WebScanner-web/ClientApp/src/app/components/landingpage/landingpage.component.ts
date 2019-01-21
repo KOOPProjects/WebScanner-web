@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ServerOrder } from "../../models/ServerOrder";
+import { ServerOrdersBackendService } from '../../services/serverorders-backendservice';
+import { ServerOrdersBackendServiceInterface } from '../../services/serverorders-backendservice-interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-landingpage',
@@ -7,9 +11,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingpageComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
+ 
+  ngOnInit() { } 
 
-  ngOnInit() {
+  goToHome() {
+    this.router.navigate(['/home']);
   }
-
 }

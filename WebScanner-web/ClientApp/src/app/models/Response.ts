@@ -4,6 +4,7 @@ export class WebAppResponse {
         public id?: number,
         public orderId?: number,
         public date?: string,
-        public content?: string
+        public content?: string,
+        public type?: string
     ) {}
 }
