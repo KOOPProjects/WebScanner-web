@@ -6,6 +6,5 @@ import { ApiResponse } from "../models/ApiResponse";
 
 @Injectable()
 export abstract class ResponsesBackendServiceInterface {
-  abstract getByOrderIds(ids: number[]): Observable<ApiResponse>;
-  abstract findByDateAndContent(dataDTO: DateAndContentDTO): Observable<ApiResponse>;
+  abstract getByOrderIdAndType(id: number, type: string): Observable<WebAppResponse[]>;
 }

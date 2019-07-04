@@ -30,9 +30,14 @@
     <None Remove="ClientApp\src\app\models\FullResponse.ts" />
     <None Remove="ClientApp\src\app\models\HtmlContent.ts" />
     <None Remove="ClientApp\src\app\models\HtmlOrder.ts" />
+    <None Remove="ClientApp\src\app\models\LoginData.ts" />
+    <None Remove="ClientApp\src\app\models\RegisterData.ts" />
     <None Remove="ClientApp\src\app\models\Response.ts" />
     <None Remove="ClientApp\src\app\models\ServerContent.ts" />
     <None Remove="ClientApp\src\app\models\ServerOrder.ts" />
+    <None Remove="ClientApp\src\app\models\Token.ts" />
+    <None Remove="ClientApp\src\app\models\User.ts" />
+    <None Remove="ClientApp\src\app\services\auth-service-interface.ts" />
     <None Remove="ClientApp\src\app\services\htmlorders-backendservice-interface.ts" />
     <None Remove="ClientApp\src\app\services\htmlorders-backendservice.ts" />
     <None Remove="ClientApp\src\app\services\responses-backendservice-interface.ts" />
@@ -47,6 +52,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\models\LoginData.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\models\Token.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\models\RegisterData.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\models\User.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\models\ApiResponse.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\models\DateAndContentDTO.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\models\FullResponse.ts" />
@@ -55,12 +64,25 @@
     <TypeScriptCompile Include="ClientApp\src\app\models\Response.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\models\ServerContent.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\models\ServerOrder.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\services\auth-service-interface.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\services\htmlorders-backendservice-interface.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\services\htmlorders-backendservice.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\services\responses-backendservice-interface.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\services\responses-backendservice.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\services\serverorders-backendservice-interface.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\services\serverorders-backendservice.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="ClientApp\src\app\models\LoginData.js">
+      <DependentUpon>LoginData.ts</DependentUpon>
+    </None>
+    <None Update="ClientApp\src\app\models\Token.js">
+      <DependentUpon>Token.ts</DependentUpon>
+    </None>
+    <None Update="ClientApp\src\app\models\RegisterData.js">
+      <DependentUpon>RegisterData.ts</DependentUpon>
+    </None>
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

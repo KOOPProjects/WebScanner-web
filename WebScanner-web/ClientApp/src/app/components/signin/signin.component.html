@@ -1,3 +1,18 @@
-<p>
-  signin works!
-</p>
+<div style="text-align: center">LOGOWANIE</div>
+<form #propertyForm="ngForm" (ngSubmit)="onSubmit(authData)" style="padding-bottom: 15%; padding-top: 15%;">
+
+  <div class="page">
+    <div class="form-group">
+      <label for="userName">Username: </label>
+      <input id="userName" name="userName" type="text" [(ngModel)]="authData.userName" class="form-control" placeholder="UserName..." />
+    </div>
+    <div class="form-group">
+      <label>password</label>
+      <input id="password" name="password" type="password" [(ngModel)]="authData.password" class="form-control" placeholder="Password..." />
+    </div>
+    <div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+      <p>{{error}}</p>
+    </div>
+  </div>
+</form>

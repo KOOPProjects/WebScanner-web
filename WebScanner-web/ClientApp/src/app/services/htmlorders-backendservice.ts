@@ -8,37 +8,50 @@ import { Http, RequestOptions, Headers, Response } from '@angular/http';
 @Injectable()
 export class HtmlOrdersBackendService extends HtmlOrdersBackendServiceInterface {
     
-  private addHtmlOrderUrl: string = "https://webscanner.ptrd.pl/api/htmlorders";
-  private deleteHtmlOrderUrl: string = "https://webscanner.ptrd.pl/api/htmlorders?orderId=";
-  private getHtmlOrderUrl: string = "https://webscanner.ptrd.pl/api/htmlorders?orderId=";
-  private getAllHtmlOrdersUrl: string = "https://webscanner.ptrd.pl/api/htmlorders/GetAll";
+  private addHtmlOrderUrl: string = "https://webscanner-api.ptrd.pl/api/order/html";
+  private deleteHtmlOrderUrl: string = "https://webscanner-api.ptrd.pl/api/order/html?orderId=";
+  private getHtmlOrderUrl: string = "https://webscanner-api.ptrd.pl/api/order/html/order?id=";
+  private getAllHtmlOrdersUrl: string = "https://webscanner-api.ptrd.pl/api/order/html";
   private jsonContentOptions: RequestOptions;
 
   constructor(private http: Http) {
     super();
     let headersJson: Headers = new Headers({
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + localStorage.getItem('token')
     });
     this.jsonContentOptions = new RequestOptions({ headers: headersJson })
   }
 
-  addHtmlOrder(newHtmlOrder: HtmlOrder): Observable<number> {
+  addHtmlOrder(newHtmlOrder: HtmlOrder): Observable<HtmlOrder> {
+    this.setHeaders();
     return this.http.post(this.addHtmlOrderUrl,
-      JSON.stringify(newHtmlOrder), this.jsonContentOptions).map(response => response.json() as number);
+      JSON.stringify(newHtmlOrder), this.jsonContentOptions).map(response => response.json() as HtmlOrder);
   }
 
   deleteHtmlOrder(htmlOrderId: number): Observable<number> {
-    return this.http.delete(this.deleteHtmlOrderUrl + htmlOrderId)
+    this.setHeaders();
+    return this.http.delete(this.deleteHtmlOrderUrl + htmlOrderId, this.jsonContentOptions)
       .map(response => response.json() as number);
   }
 
   getHtmlOrder(htmlOrderId: number): Observable<HtmlOrder> {
-    return this.http.get(this.getHtmlOrderUrl + htmlOrderId)
+    this.setHeaders();
+    return this.http.get(this.getHtmlOrderUrl + htmlOrderId, this.jsonContentOptions)
       .map(response => response.json() as HtmlOrder);
   }
 
   getAllHtmlOrders(): Observable<HtmlOrder[]> {
-    return this.http.get(this.getAllHtmlOrdersUrl)
+    this.setHeaders();
+    return this.http.get(this.getAllHtmlOrdersUrl, this.jsonContentOptions)
       .map(response => response.json() as HtmlOrder[]);
+  }
+
+  private setHeaders() {
+    let headersJson: Headers = new Headers({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + localStorage.getItem('token')
+    });
+    this.jsonContentOptions = new RequestOptions({ headers: headersJson })
   }
 }

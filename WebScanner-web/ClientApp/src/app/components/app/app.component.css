@@ -15,6 +15,26 @@
   width: 7%;
 }
 
+.logout {
+  position: fixed;
+  left: 85%;
+  top: 6%;
+  background-color: white;
+  width: 10%;
+  height: 5%;
+  font-size: 20px;
+  color: #12204F;
+  text-align: center;
+  border: 2px solid #3C729D;
+  border-radius: 4px;
+}
+
+.logout:hover {
+  background-color: #3C729D;
+  color: white;
+  cursor: pointer;
+}
+
 .logo {
   position: fixed;
   left: 8.5%;
@@ -29,9 +49,10 @@
   position: relative;
   text-align: center;
   color: white;
+  margin-left: 10%;
+  margin-right: 10%;
   font-size: 3vw;
   font-family: Times New Roman;
-  z-index: 2;
   top: 25%;
 }
 
@@ -66,9 +87,29 @@
   position: fixed;
   background-color: #3C729D;
   width: 100%;
-  height: 8%;
+  height: 15%;
   top: 92%;
   z-index: 1;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.button {
+  position: fixed;
+  left: 45%;
+  top: 61%;
+  background-color: white;
+  width: 10%;
+  height: 5%;
+  font-size: 20px;
+  color: #12204F;
+  text-align: center;
+  border: 2px solid #3C729D;
+  border-radius: 4px;
 }
 
 .text {

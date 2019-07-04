@@ -57,8 +57,8 @@ export class HtmlorderdetailsComponent implements OnInit {
   getResponses(): void {
     var ids: number[] = new Array<number>();
     ids[0] = this.idParam;
-    this.responseService.getByOrderIds(ids).subscribe(data => {
-      this.responses = data.responses;
+    this.responseService.getByOrderIdAndType(this.idParam, 'html').subscribe(data => {
+      this.responses = data;
       console.log(this.responses);
       this.responses.forEach(obj => {
         if (obj.type == "html") {

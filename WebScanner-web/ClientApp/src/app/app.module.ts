@@ -22,6 +22,8 @@ import { AddserverorderComponent } from './components/addserverorder/addserveror
 import { ResponsesBackendServiceInterface } from './services/responses-backendservice-interface';
 import { ResponsesBackendService } from './services/responses-backendservice';
 import { HtmlorderdetailsComponent } from './components/htmlorderdetails/htmlorderdetails.component';
+import { AuthServiceInterface } from './services/auth-service-interface';
+import { AuthService, AuthGuard } from './services/auth-service';
 //here you need to import components 
 
 
@@ -47,17 +49,21 @@ import { HtmlorderdetailsComponent } from './components/htmlorderdetails/htmlord
     FormsModule,
     RouterModule.forRoot([
       { path: '', redirectTo: 'landingpage', pathMatch: 'full' },
-      { path: 'home', component: HomeComponent },
+      { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
       { path: 'landingpage', component: LandingpageComponent },
-      { path: 'deleteorder/:type/:id', component: DeleteorderComponent },
-      { path: "orderdetails/server/:id", component: OrderdetailsComponent },
-      { path: "orderdetails/html/:id", component: HtmlorderdetailsComponent },
-      { path: 'addhtmlorder', component: AddhtmlorderComponent },
-      { path: 'addserverorder', component: AddserverorderComponent },
-      { path: '**', redirectTo: 'landingpage' }
+      { path: 'deleteorder/:type/:id', component: DeleteorderComponent, canActivate: [AuthGuard] },
+      { path: "orderdetails/server/:id", component: OrderdetailsComponent, canActivate: [AuthGuard] },
+      { path: "orderdetails/html/:id", component: HtmlorderdetailsComponent, canActivate: [AuthGuard] },
+      { path: 'addhtmlorder', component: AddhtmlorderComponent, canActivate: [AuthGuard] },
+      { path: 'addserverorder', component: AddserverorderComponent, canActivate: [AuthGuard] },
+      { path: 'signup', component: SignupComponent },
+      { path: 'signin', component: SigninComponent },
+      { path: '**', redirectTo: 'landingpage' },
     ])
   ],
   providers: [
+    AppComponent,
+    { provide: AuthServiceInterface, useClass: AuthService },
     HomeComponent,
     { provide: ServerOrdersBackendServiceInterface, useClass: ServerOrdersBackendService },
     HomeComponent,
@@ -77,7 +83,13 @@ import { HtmlorderdetailsComponent } from './components/htmlorderdetails/htmlord
     AddserverorderComponent,
     { provide: ServerOrdersBackendServiceInterface, useClass: ServerOrdersBackendService },
     AddhtmlorderComponent,
-    { provide: HtmlOrdersBackendServiceInterface, useClass: HtmlOrdersBackendService }
+    { provide: HtmlOrdersBackendServiceInterface, useClass: HtmlOrdersBackendService },
+    SignupComponent,
+    { provide: AuthServiceInterface, useClass: AuthService },
+    SigninComponent,
+    { provide: AuthServiceInterface, useClass: AuthService },
+    AuthGuard,
+    { provide: AuthServiceInterface, useClass: AuthService }
   ],
   bootstrap: [AppComponent]
 })
