@@ -36,6 +36,7 @@
     <None Remove="ClientApp\src\app\models\ServerContent.ts" />
     <None Remove="ClientApp\src\app\models\ServerOrder.ts" />
     <None Remove="ClientApp\src\app\models\Token.ts" />
+    <None Remove="ClientApp\src\app\models\TokenResponse.ts" />
     <None Remove="ClientApp\src\app\models\User.ts" />
     <None Remove="ClientApp\src\app\services\auth-service-interface.ts" />
     <None Remove="ClientApp\src\app\services\htmlorders-backendservice-interface.ts" />
@@ -52,6 +53,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\models\TokenResponse.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\models\LoginData.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\models\Token.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\models\RegisterData.ts" />

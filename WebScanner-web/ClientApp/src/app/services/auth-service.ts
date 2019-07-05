@@ -5,6 +5,7 @@ import { User } from "../models/User";
 import { Observable } from 'rxjs';
 import { AuthServiceInterface } from './auth-service-interface';
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { TokenResponse } from "../models/TokenResponse";
 
 @Injectable()
 export class AuthService extends AuthServiceInterface {
@@ -21,9 +22,9 @@ export class AuthService extends AuthServiceInterface {
     this.jsonContentOptions = new RequestOptions({ headers: headersJson })
   }
 
-  login(email: string, password: string) : Observable<Token> {
+  login(email: string, password: string) : Observable<TokenResponse> {
     return this.http.post(this.loginUrl,
-      JSON.stringify({UserName: email, password: password}), this.jsonContentOptions).map(response => response.json() as Token);
+      JSON.stringify({UserName: email, password: password}), this.jsonContentOptions).map(response => response.json() as TokenResponse);
   }
 
   register(email: string, password: string): Observable<User> {
